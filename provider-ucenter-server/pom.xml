@@ -85,6 +85,12 @@
         <!--mybatis plus end-->
         <!--db end-->
 
+        <!--nacos begin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--nacos end-->
         <!--test begin-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

@@ -1,9 +1,10 @@
 package com.kevin.hooc.biz.ucenter.server.controller;
 
-import com.kevin.hooc.common.bean.pojo.entity.ucenter.User;
-import com.kevin.provider.ucenter.server.mapper.UserMapper;
+import com.kevin.hooc.common.bean.pojo.qo.ucenter.LoginUserQO;
+import com.kevin.hooc.provider.ucenter.server.service.UserService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,12 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Reference
-    private UserMapper userMapper;
+    private UserService userService;
 
-    @RequestMapping("/register")
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(String value) {
-        User user = userMapper.selectById(13L);
-        System.out.println("user is : " + user);
+        userService.addUser(new LoginUserQO());
         System.out.println("value is : " + value);
     }
 

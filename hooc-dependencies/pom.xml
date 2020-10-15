@@ -12,7 +12,7 @@
     <properties>
         <spring.version>5.2.8.RELEASE</spring.version>
 
-        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+        <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
         <dubbo.version>2.7.2</dubbo.version>
         <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
@@ -158,6 +158,12 @@
                         <groupId>log4j</groupId>
                         <artifactId>log4j</artifactId>
                     </exclusion>
+                    <!--dubbo-common 重复报错 begin-->
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                    <!--dubbo-common 重复报错 end-->
                 </exclusions>
             </dependency>
             <dependency>
@@ -211,6 +217,14 @@
                 <scope>test</scope>
             </dependency>
             <!--test end-->
+
+            <!--memory leak 报错 begin-->
+            <!--<dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons</artifactId>
+                <version>2.1.1.RELEASE</version>
+            </dependency>-->
+            <!--memory leak 报错 end-->
 
         </dependencies>
 

@@ -4,8 +4,6 @@ import com.kevin.hooc.common.bean.pojo.entity.ucenter.User;
 import com.kevin.hooc.common.bean.pojo.qo.ucenter.LoginUserQO;
 import com.kevin.hooc.provider.ucenter.server.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author:kevinfoo
