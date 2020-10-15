@@ -1,0 +1,4 @@
+# Project exclude paths
+/biz-ucenter-api/target/
+/common-bean/target/
+/provider-ucenter-api/target/

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: biz-ucenter-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.26.178.183:8848/nacos
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.26.178.183:3307/hooc
+    username: root
+    password: 153500552Mysql.com
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+server:
+  port: 0
+  servlet:
+    context-path: /ucenter
+
+dubbo:
+  scan:
+    base-packages: com.kevin.*.ucenter.server
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://120.26.178.183:8848
